@@ -3,7 +3,7 @@
     <body>
         <p id="kortti"></p>
         <p id="Tulos">0</p>
-        <button onclick="Kortti()">Hit me!</button><button onclick="Ai()">Stop</button>
+        <button id="hit" onclick="Kortti()">Hit me!</button><button id="stop" onclick="Ai()">Stop</button>
         
         <p id="AIt"></p>
         <p id="AIs">0</p>
@@ -19,7 +19,6 @@
                 player = {score:0};
                 AI = {score:0};
                 AIturn = false;
-                test = true;
                 document.getElementById("kortti").innerHTML = "Arvo kortti";
                 document.getElementById("Tulos").innerHTML = "Your score: "+ player.score;
                 document.getElementById("AIt").innerHTML = "AI Waiting...";
@@ -28,6 +27,8 @@
             
             function Ai(){
                 AIturn = true;
+                document.getElementById("hit").innerHTML = "Hit AI!";
+                document.getElementById("AIs").innerHTML = "AI score: "+ AI.score;
                 
             }
             
@@ -106,7 +107,12 @@
                     }                    
                 }
                 else{
-                    return;
+                    if(AIturn){
+                        Ai();
+                    }
+                    else{
+                      return;  
+                    } 
                 }
             }
             
