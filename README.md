@@ -1,2 +1,5 @@
 # Blackjack
-My yet simple Blackjack game for browsers created with javascript.
+1. Open with browser.
+2. Press hit to deal more cards.
+3. Press stop to pass turn to AI
+4. Popup will show game result
