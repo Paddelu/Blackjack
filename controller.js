@@ -2,14 +2,27 @@ var player;
 var AI;
 var score;
 var AIturn;
-                        
+var player
+var name;
+
+window.onload = setName;
+
+function setName(){
+    player = {name,score};
+    player.name = prompt("Please enter your name");
+    initiate();
+    
+}
+                
 function initiate() {
-    player = {score: 0};
-    AI = {score: 0};
+    AI = {name: "AI",score: 0};
+    player.score = 0;
     AIturn = false;
+    document.getElementById("Player").innerHTML = player.name;
     document.getElementById("card").innerHTML = "Deal a card";
     document.getElementById("Score").innerHTML = "Your score: " + player.score;
     document.getElementById("AIt").innerHTML = "AI Waiting...";
+    document.getElementById("AIn").innerHTML = AI.name;
     document.getElementById("AIs").innerHTML = "AI score: " + AI.score;
 }
 
@@ -79,6 +92,12 @@ function logic(score) {
             Losepopup();
         }               
     }
+    else if (AI.score >= 17 &&  AI.score < player.score) {
+        if (AIturn) {
+            document.getElementById("Score").innerHTML = "You win! Your score: "+ player.score;
+            Winpopup();
+        }               
+    }
     else {
         if (AIturn) {
             setTimeout(Ai, 1000);
@@ -91,7 +110,7 @@ function logic(score) {
     }
 }
             
-function laskin(value) {
+function getValue(value) {
     if (AIturn) {
         AI.score = AI.score + value;
         document.getElementById("AIs").innerHTML = "AI score: " + AI.score;
@@ -116,18 +135,17 @@ function getCard() {
     value = Math.floor((Math.random() * 13) + 1);
     switch (value) {
         case 1: valueN ="ace"; break;
-        case 11: value= 10; valueN ="Jack"; break;
-        case 12: value= 10; valueN ="Queen"; break;
-        case 13: value= 10; valueN ="King"; break;
+        case 11: value= 10; valueN = "Jack"; break;
+        case 12: value= 10; valueN = "Queen"; break;
+        case 13: value= 10; valueN =" King"; break;
         default: valueN = value; break;      
     }
     if(AIturn) {
         document.getElementById("AIt").innerHTML = text + valueN + " of " + maa;
-        laskin(value); 
+        getValue(value); 
     }
     else {
         document.getElementById("card").innerHTML = text + valueN + " of " + maa;
-        laskin(value);  
+        getValue(value);  
     }
 }
-initiate();
