@@ -15,6 +15,7 @@ function initiate() {
 
 function Ai() {
     AIturn = true;
+    Kortti();
 }
 
 function Winpopup() {
@@ -37,6 +38,17 @@ function Losepopup() {
     }
 }
 
+function Drawpopup() {
+    var r = confirm("DRAW! Play again");
+    if (r === true) {
+        initiate();
+    } 
+    else {
+        alert("RAGEQUIT!");
+    }
+}
+
+
 function logic(tulos) {
     if (tulos > 21) {
         if (AIturn) {
@@ -56,13 +68,23 @@ function logic(tulos) {
             Winpopup();
         } 
     }
-    else if (AI.score > player.score) {
+    else if (AI.score >= 17 &&  AI.score == player.score){
+        Drawpopup();
+    }
+    else if (AI.score >= 17 &&  AI.score > player.score) {
         if (AIturn) {
             Losepopup();
         }               
     }
     else {
-        return;
+        if (AIturn) {
+            setTimeout(Ai, 1000);
+        
+        } 
+        else{
+           return; 
+        }
+        
     }
 }
             
