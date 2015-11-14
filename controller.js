@@ -116,9 +116,9 @@ function getCard() {
     value = Math.floor((Math.random() * 13) + 1);
     switch (value) {
         case 1: valueN ="ace"; break;
-        case 11: valueN ="Jack"; break;
-        case 12: valueN ="Queen"; break;
-        case 13: valueN ="King"; break;
+        case 11: value= 10; valueN ="Jack"; break;
+        case 12: value= 10; valueN ="Queen"; break;
+        case 13: value= 10; valueN ="King"; break;
         default: valueN = value; break;      
     }
     if(AIturn) {
