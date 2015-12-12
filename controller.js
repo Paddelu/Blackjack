@@ -139,13 +139,13 @@ function getValue(value) {
 }
             
 function getCard() {
-    var value, valueN, maa, text = "The card dealt is ";
-    maa = Math.floor((Math.random() * 4) + 1);
-    switch (maa) {
-        case 1: maa = "♥ "; break;
-        case 2: maa = "♠ "; break;
-        case 3: maa = "♦ "; break;
-        case 4: maa = "♣ "; break;         
+    var value, valueN, suit, text = "The card dealt is ";
+    suit = Math.floor((Math.random() * 4) + 1);
+    switch (suit) {
+        case 1: suit = "♥ "; break;
+        case 2: suit = "♠ "; break;
+        case 3: suit = "♦ "; break;
+        case 4: suit = "♣ "; break;         
     }
     value = Math.floor((Math.random() * 13) + 1);
     switch (value) {
@@ -156,13 +156,13 @@ function getCard() {
         default: valueN = value; break;      
     }
     if(AIturn) {
-        document.getElementById("AIt").innerHTML = text + valueN + " of " + maa;
-        document.getElementById("AIcards").innerHTML +=" "+ valueN + " of " + maa+",";
+        document.getElementById("AIt").innerHTML = text + valueN + " of " + suit;
+        document.getElementById("AIcards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value); 
     }
     else {
-        document.getElementById("card").innerHTML = text + valueN + " of " + maa;
-        document.getElementById("cards").innerHTML +=" "+ valueN + " of " + maa+",";
+        document.getElementById("card").innerHTML = text + valueN + " of " + suit;
+        document.getElementById("cards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value);  
     }
 }
