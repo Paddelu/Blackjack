@@ -4,6 +4,7 @@ var score;
 var AIturn;
 var player
 var name;
+var start;
 
 window.onload = setName;
 
@@ -18,13 +19,27 @@ function initiate() {
     AI = {name: "AI",score: 0};
     player.score = 0;
     AIturn = false;
+    start = true;
     document.getElementById("Player").innerHTML = player.name;
     document.getElementById("card").innerHTML = "Deal a card";
+    document.getElementById("cards").innerHTML = "Player cards:";
     document.getElementById("Score").innerHTML = "Your score: " + player.score;
     document.getElementById("AIt").innerHTML = "AI Waiting...";
     document.getElementById("AIn").innerHTML = AI.name;
+    document.getElementById("AIcards").innerHTML = "AIS cards:";
     document.getElementById("AIs").innerHTML = "AI score: " + AI.score;
+    StartDeal();
+
 }
+
+function StartDeal(){
+    getCard();
+    Ai();
+    start = false;
+    AIturn = false;
+    getCard();  
+}
+
 
 function Ai() {
     AIturn = true;
@@ -99,7 +114,7 @@ function logic(score) {
         }               
     }
     else {
-        if (AIturn) {
+        if (AIturn && !start) {
             setTimeout(Ai, 1000);
         
         } 
@@ -142,10 +157,12 @@ function getCard() {
     }
     if(AIturn) {
         document.getElementById("AIt").innerHTML = text + valueN + " of " + maa;
+        document.getElementById("AIcards").innerHTML +=" "+ valueN + " of " + maa+",";
         getValue(value); 
     }
     else {
         document.getElementById("card").innerHTML = text + valueN + " of " + maa;
+        document.getElementById("cards").innerHTML +=" "+ valueN + " of " + maa+",";
         getValue(value);  
     }
 }
