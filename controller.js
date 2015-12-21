@@ -16,9 +16,14 @@ function setName(){
 // adds a div with a card (taken from css class)  inside cards div 
     function cardTest(){
     var card = document.createElement("div");  
-    card.className = "piece1"        
-    document.getElementById("cardsT").appendChild(card);
-    
+    card.className = "piece1"     
+    if(AIturn){
+        document.getElementById("cardsAI").appendChild(card);
+    }
+    else{
+        document.getElementById("cardsP").appendChild(card);
+    }
+    return; 
 }
                 
 function initiate() {
@@ -26,6 +31,8 @@ function initiate() {
     player.score = 0;
     AIturn = false;
     start = true;
+    document.getElementById("cardsP").innerHTML = "";
+    document.getElementById("cardsAI").innerHTML = "";
     document.getElementById("Player").innerHTML = player.name;
     document.getElementById("card").innerHTML = "Deal a card";
     document.getElementById("cards").innerHTML = "Player cards:";
@@ -145,6 +152,7 @@ function getValue(value) {
 }
             
 function getCard() {
+    cardTest();
     var value, valueN, suit, text = "The card dealt is ";
     suit = Math.floor((Math.random() * 4) + 1);
     switch (suit) {
