@@ -5,13 +5,19 @@ var AIturn;
 var player
 var name;
 var start;
-
 window.onload = setName;
 
 function setName(){
     player = {name,score};
     player.name = prompt("Please enter your name");
     initiate();
+    
+}
+// adds a div with a card (taken from css class)  inside cards div 
+    function cardTest(){
+    var card = document.createElement("div");  
+    card.className = "piece1"        
+    document.getElementById("cardsT").appendChild(card);
     
 }
                 

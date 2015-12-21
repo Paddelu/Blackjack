@@ -1,0 +1,18 @@
+#cardsT {
+    display: flex;
+}
+
+.piece1 {
+    background-image:url(/media/cards.png);
+    width:72px;
+    height:97px;
+    background-position:0 0;
+}
+
+.piece2 {
+    background-image:url(/media/cards.png);
+    width:72px;
+    height:97px;
+    background-position: -73px 0px;
+    
+}
