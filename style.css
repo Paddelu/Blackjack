@@ -1,18 +1,322 @@
+body {
+  background: DarkGreen; }
+
+p {
+  color: white; }
+
 #cardsP, #cardsAI {
-    display: flex;
-}
+  display: flex; }
+
+.piece0 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: 0px 0px; }
 
 .piece1 {
-    background-image:url(/media/cards.png);
-    width:72px;
-    height:97px;
-    background-position:0 0;
-}
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -73px 0px; }
 
 .piece2 {
-    background-image:url(/media/cards.png);
-    width:72px;
-    height:97px;
-    background-position: -73px 0px;
-    
-}
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -146px 0px; }
+
+.piece3 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -219px 0px; }
+
+.piece4 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -292px 0px; }
+
+.piece5 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -365px 0px; }
+
+.piece6 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -438px 0px; }
+
+.piece7 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -511px 0px; }
+
+.piece8 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -584px 0px; }
+
+.piece9 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -657px 0px; }
+
+.piece10 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -730px 0px; }
+
+.piece11 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -803px 0px; }
+
+.piece12 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -876px 0px; }
+
+.piece13 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -949px 0px; }
+
+.piece14 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: 0px 97px; }
+
+.piece15 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -73px 97px; }
+
+.piece16 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -146px 97px; }
+
+.piece17 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -219px 97px; }
+
+.piece18 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -292px 97px; }
+
+.piece19 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -365px 97px; }
+
+.piece20 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -438px 97px; }
+
+.piece21 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -511px 97px; }
+
+.piece22 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -584px 97px; }
+
+.piece23 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -657px 97px; }
+
+.piece24 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -730px 97px; }
+
+.piece25 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -803px 97px; }
+
+.piece26 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -876px 97px; }
+
+.piece27 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: 0px 194px; }
+
+.piece28 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -73px 194px; }
+
+.piece29 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -146px 194px; }
+
+.piece30 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -219px 194px; }
+
+.piece31 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -292px 194px; }
+
+.piece32 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -365px 194px; }
+
+.piece33 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -438px 194px; }
+
+.piece34 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -511px 194px; }
+
+.piece35 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -584px 194px; }
+
+.piece36 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -657px 194px; }
+
+.piece37 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -730px 194px; }
+
+.piece38 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -803px 194px; }
+
+.piece39 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -876px 194px; }
+
+.piece40 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: 0px 291px; }
+
+.piece41 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -73px 291px; }
+
+.piece42 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -146px 291px; }
+
+.piece43 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -219px 291px; }
+
+.piece44 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -292px 291px; }
+
+.piece45 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -365px 291px; }
+
+.piece46 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -438px 291px; }
+
+.piece47 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -511px 291px; }
+
+.piece48 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -584px 291px; }
+
+.piece49 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -657px 291px; }
+
+.piece50 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -730px 291px; }
+
+.piece51 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -803px 291px; }
+
+/*# sourceMappingURL=style.css.map */

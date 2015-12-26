@@ -16,7 +16,7 @@ function setName(){
 // adds a div with a card (taken from css class)  inside cards div 
     function cardTest(){
     var card = document.createElement("div");  
-    card.className = "piece1"     
+    card.className = "piece0"     
     if(AIturn){
         document.getElementById("cardsAI").appendChild(card);
     }
