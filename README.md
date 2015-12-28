@@ -1,6 +1,5 @@
 # Blackjack
 TODO:
-1. make card images correspond the drawn cards
 2. Main menu
 3. More player slots
 4. Sounds/music
