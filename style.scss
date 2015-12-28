@@ -2,6 +2,8 @@ $primaryColor: DarkGreen;
 $fontColor: white;
 $j:0;
 $k:-1;
+$s:c;
+$c:null;
 
 body {
     background: $primaryColor;  
@@ -18,8 +20,22 @@ p {
 
 
 @for $i from 0 through 51 {
-  .piece#{$i} {
-    $k: $k + 1;
+        @if $i <= 13{
+            $s: c;
+        }
+        @else if $i <= 26{
+            $s: s;   
+        }
+        @else if $i <= 39{
+            $s: h;   
+        }
+        @else if $i > 39{
+            $s: d;   
+        }
+    $c: $s + $i;
+    .#{$c} {
+        
+    $k: $k + 1; //clubs,spades,hearts,diamonds
     background-image:url(/media/cards.png);
     width:72px;
     height:97px;
