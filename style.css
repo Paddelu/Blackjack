@@ -7,316 +7,316 @@ p {
 #cardsP, #cardsAI {
   display: flex; }
 
-.c0 {
+.c1 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: 0px 0px; }
 
-.c1 {
+.c2 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -73px 0px; }
 
-.c2 {
+.c3 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -146px 0px; }
 
-.c3 {
+.c4 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -219px 0px; }
 
-.c4 {
+.c5 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -292px 0px; }
 
-.c5 {
+.c6 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -365px 0px; }
 
-.c6 {
+.c7 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -438px 0px; }
 
-.c7 {
+.c8 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -511px 0px; }
 
-.c8 {
+.c9 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -584px 0px; }
 
-.c9 {
+.c10 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -657px 0px; }
 
-.c10 {
+.c11 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -730px 0px; }
 
-.c11 {
+.c12 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -803px 0px; }
 
-.c12 {
+.c13 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -876px 0px; }
 
-.c13 {
-  background-image: url(/media/cards.png);
-  width: 72px;
-  height: 97px;
-  background-position: -949px 0px; }
-
-.s14 {
+.s1 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: 0px 97px; }
 
-.s15 {
+.s2 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -73px 97px; }
 
-.s16 {
+.s3 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -146px 97px; }
 
-.s17 {
+.s4 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -219px 97px; }
 
-.s18 {
+.s5 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -292px 97px; }
 
-.s19 {
+.s6 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -365px 97px; }
 
-.s20 {
+.s7 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -438px 97px; }
 
-.s21 {
+.s8 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -511px 97px; }
 
-.s22 {
+.s9 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -584px 97px; }
 
-.s23 {
+.s10 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -657px 97px; }
 
-.s24 {
+.s11 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -730px 97px; }
 
-.s25 {
+.s12 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -803px 97px; }
 
-.s26 {
+.s13 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -876px 97px; }
 
-.h27 {
+.h1 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: 0px 194px; }
 
-.h28 {
+.h2 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -73px 194px; }
 
-.h29 {
+.h3 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -146px 194px; }
 
-.h30 {
+.h4 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -219px 194px; }
 
-.h31 {
+.h5 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -292px 194px; }
 
-.h32 {
+.h6 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -365px 194px; }
 
-.h33 {
+.h7 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -438px 194px; }
 
-.h34 {
+.h8 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -511px 194px; }
 
-.h35 {
+.h9 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -584px 194px; }
 
-.h36 {
+.h10 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -657px 194px; }
 
-.h37 {
+.h11 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -730px 194px; }
 
-.h38 {
+.h12 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -803px 194px; }
 
-.h39 {
+.h13 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -876px 194px; }
 
-.d40 {
+.d1 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: 0px 291px; }
 
-.d41 {
+.d2 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -73px 291px; }
 
-.d42 {
+.d3 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -146px 291px; }
 
-.d43 {
+.d4 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -219px 291px; }
 
-.d44 {
+.d5 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -292px 291px; }
 
-.d45 {
+.d6 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -365px 291px; }
 
-.d46 {
+.d7 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -438px 291px; }
 
-.d47 {
+.d8 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -511px 291px; }
 
-.d48 {
+.d9 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -584px 291px; }
 
-.d49 {
+.d10 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -657px 291px; }
 
-.d50 {
+.d11 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -730px 291px; }
 
-.d51 {
+.d12 {
   background-image: url(/media/cards.png);
   width: 72px;
   height: 97px;
   background-position: -803px 291px; }
+
+.d13 {
+  background-image: url(/media/cards.png);
+  width: 72px;
+  height: 97px;
+  background-position: -876px 291px; }
 
 /*# sourceMappingURL=style.css.map */
