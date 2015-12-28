@@ -5,6 +5,9 @@ var AIturn;
 var player
 var name;
 var start;
+var value, valueN, suit, text = "The card dealt is ";
+var cs = "cardsuit";
+var cv = "cardvalue";
 window.onload = setName;
 
 function setName(){
@@ -14,9 +17,10 @@ function setName(){
     
 }
 // adds a div with a card (taken from css class)  inside cards div 
-    function cardTest(){
+    function cardGraph(){
     var card = document.createElement("div");  
-    card.className = "piece0"     
+    console.log(cs + cv);
+    card.className = cs + cv;
     if(AIturn){
         document.getElementById("cardsAI").appendChild(card);
     }
@@ -27,6 +31,7 @@ function setName(){
 }
                 
 function initiate() {
+    console.log("game starting");
     AI = {name: "AI",score: 0};
     player.score = 0;
     AIturn = false;
@@ -152,16 +157,16 @@ function getValue(value) {
 }
             
 function getCard() {
-    cardTest();
-    var value, valueN, suit, text = "The card dealt is ";
     suit = Math.floor((Math.random() * 4) + 1);
+    cs = suit;
     switch (suit) {
-        case 1: suit = "♥ "; break;
-        case 2: suit = "♠ "; break;
-        case 3: suit = "♦ "; break;
-        case 4: suit = "♣ "; break;         
+        case 1: suit = "♣ "; cs="c"; break;
+        case 2: suit = "♠ "; cs="s"; break;
+        case 3: suit = "♥ "; cs="h"; break;
+        case 4: suit = "♦ "; cs="d"; break;         
     }
     value = Math.floor((Math.random() * 13) + 1);
+    cv = value;
     switch (value) {
         case 1: valueN ="ace"; break;
         case 11: value= 10; valueN = "Jack"; break;
@@ -170,11 +175,13 @@ function getCard() {
         default: valueN = value; break;      
     }
     if(AIturn) {
+        cardGraph();
         document.getElementById("AIt").innerHTML = text + valueN + " of " + suit;
         document.getElementById("AIcards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value); 
     }
     else {
+        cardGraph();
         document.getElementById("card").innerHTML = text + valueN + " of " + suit;
         document.getElementById("cards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value);  
