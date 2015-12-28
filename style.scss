@@ -25,13 +25,13 @@ p {
             $s: c;
         }
         @else if $sc == 2{
-            $s: s;   
+            $s: d;   
         }
         @else if $sc == 3{
             $s: h;   
         }
         @else if $sc == 4{
-            $s: d;   
+            $s: s;   
         }
     $c: $s + $i;
     .#{$c} {

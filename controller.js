@@ -161,9 +161,9 @@ function getCard() {
     cs = suit;
     switch (suit) {
         case 1: suit = "♣ "; cs="c"; break;
-        case 2: suit = "♠ "; cs="s"; break;
-        case 3: suit = "♥ "; cs="h"; break;
-        case 4: suit = "♦ "; cs="d"; break;         
+        case 2: suit = "♦ "; cs="d"; break;
+        case 3: suit = "♥ "; cs="h"; break; 
+        case 4: suit = "♠ "; cs="s"; break;       
     }
     value = Math.floor((Math.random() * 13) + 1);
     cv = value;
