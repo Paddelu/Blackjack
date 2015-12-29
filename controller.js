@@ -8,6 +8,7 @@ var start;
 var value, valueN, suit, text = "The card dealt is ";
 var cs = "cardsuit";
 var cv = "cardvalue";
+var winCount = 0;
 window.onload = setName;
 
 function setName(){
@@ -46,8 +47,9 @@ function initiate() {
     document.getElementById("AIn").innerHTML = AI.name;
     document.getElementById("AIcards").innerHTML = "AIS cards:";
     document.getElementById("AIs").innerHTML = "AI score: " + AI.score;
+    document.getElementById("wins").innerHTML = "Wins in a row: "+ winCount;
+    document.getElementById("record").innerHTML = "Current record by "+localStorage.getItem("Playername")+" with a score of: "+ localStorage.getItem("Wincount");
     StartDeal();
-
 }
 
 function StartDeal(){
@@ -58,6 +60,19 @@ function StartDeal(){
     getCard();  
 }
 
+function winCounter(){
+    winCount++;
+    if(winCount > localStorage.getItem("Wincount")){
+        localStorage.setItem("Wincount", winCount);
+        localStorage.setItem("Playername", player.name);
+    }
+    return;
+}
+
+function resetWinCounter(){
+    winCount = 0;
+    return;
+}
 
 function Ai() {
     AIturn = true;
@@ -65,32 +80,38 @@ function Ai() {
 }
 
 function Winpopup() {
+    winCounter();
     var r = confirm("YOU WIN! Play again?");
     if (r === true) {
         initiate();
     }
     else {
         alert("Leaves with a win!");
+        location.href='index.html';
     }
 }
             
 function Losepopup() {
+    resetWinCounter();
     var r = confirm("YOU LOSE! Play again");
     if (r === true) {
         initiate();
     } 
     else {
         alert("RAGEQUIT!");
+        location.href='index.html';
     }
 }
 
 function Drawpopup() {
+    resetWinCounter();
     var r = confirm("DRAW! Play again");
     if (r === true) {
         initiate();
     } 
     else {
         alert("RAGEQUIT!");
+        location.href='index.html';
     }
 }
 
