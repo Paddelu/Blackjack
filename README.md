@@ -1,7 +1,7 @@
 # Blackjack
 Last update: 29.12.15
 
-How many wins can get against the dealer in a row?
+How many wins can you get against the dealer in a row?
 
 1. Open index.html with browser.
 2. Press hit to deal more cards.
