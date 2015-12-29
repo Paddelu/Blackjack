@@ -1,11 +1,10 @@
 # Blackjack
-TODO:
-2. Main menu
-3. More player slots
-4. Sounds/music
-5. somekind of character/ background art
+Last update: 29.12.15
 
-1. Open View.html with browser.
+How many wins can get against the dealer in a row?
+
+1. Open index.html with browser.
 2. Press hit to deal more cards.
-3. Press stop to pass turn to AI
-4. Popup will show game result
+3. Press stop to pass turn to the dealer.
+4. Popup will show game result.
+5. Game will save the highest score along with player name.
