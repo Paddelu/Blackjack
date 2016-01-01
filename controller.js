@@ -2,7 +2,7 @@ var player;
 var AI;
 var score;
 var AIturn;
-var player
+var player;
 var name;
 var start;
 var value, valueN, suit, text = "The card dealt is ";
@@ -11,13 +11,11 @@ var cv = "cardvalue";
 var winCount = 0;
 var deck = [];
 var draw = 0;
-window.onload = setName;
 
 function setName(){
     player = {name,score};
     player.name = prompt("Please enter your name");
-    initiate();
-    
+    initiate();  
 }
 // adds a div with a card (taken from css class)  inside cards div 
     function cardGraph(){
@@ -33,7 +31,7 @@ function setName(){
     return; 
 }
                 
-function initiate() {
+function initiate(){
     deck.length = 0;
     createDeck();
     console.log("game starting");
@@ -163,13 +161,11 @@ function logic(score) {
         } 
         else{
            return; 
-        }
-        
+        }  
     }
 }
             
 function getValue(value) {
-    
     if (AIturn) {
         AI.score = AI.score + value;
         document.getElementById("AIs").innerHTML = "AI score: " + AI.score;
@@ -183,31 +179,24 @@ function getValue(value) {
 }
 
 function createDeck(){
-    
-for(k = 1; k < 5; k++){
-    switch (k) {
-        case 1: cs="c"; break;
-        case 2: cs="d"; break;
-        case 3: cs="h"; break; 
-        case 4: cs="s"; break;       
+    for(k = 1; k < 5; k++){
+        switch (k) {
+            case 1: cs="c"; break;
+            case 2: cs="d"; break;
+            case 3: cs="h"; break; 
+            case 4: cs="s"; break;       
+        }
+        for(j = 1; j < 14; j++){
+            cv = j;
+            deck.push(cs+cv);
+        }
     }
-    for(j = 1; j < 14; j++){
-
-        cv = j;
-        deck.push(cs+cv);
-    }
-
-}
     var i = 0;
     while (i < deck.length){
        console.log("card is: "+ deck[i]); 
-        i=i+1;
-        
+        i=i+1;   
     }
     console.log(deck.length);
-    
-    //console.log(deck[]);
- 
     return;
 }
             
@@ -235,9 +224,6 @@ function getCard() {
         default: valueN = value; break;      
     }
     
-    
-    
-    
     if(AIturn) {
         cardGraph();
         delete deck[draw];
@@ -253,3 +239,5 @@ function getCard() {
         getValue(value);  
     }
 }
+
+window.onload = setName;
