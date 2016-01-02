@@ -2,7 +2,6 @@ var player;
 var AI;
 var score;
 var AIturn;
-var player;
 var name;
 var start;
 var value, valueN, suit, text = "The card dealt is ";
@@ -11,10 +10,16 @@ var cv = "cardvalue";
 var winCount = 0;
 var deck = [];
 var draw = 0;
+var number_of_decks = 0;
+var cardsR = 0;
 
 function setName(){
     player = {name,score};
+    console.log(player.name);
+    while(!player.name || player.name.trim() == ""){
     player.name = prompt("Please enter your name");
+    }
+    Decks();
     initiate();  
 }
 // adds a div with a card (taken from css class)  inside cards div 
@@ -39,6 +44,8 @@ function initiate(){
     player.score = 0;
     AIturn = false;
     start = true;
+    document.getElementById("cardsR").innerHTML = "Cards remaining: "+ cardsR;
+    document.getElementById("decksN").innerHTML = "Number of decks: "+ number_of_decks;
     document.getElementById("cardsP").innerHTML = "";
     document.getElementById("cardsAI").innerHTML = "";
     document.getElementById("Player").innerHTML = player.name;
@@ -54,12 +61,26 @@ function initiate(){
     StartDeal();
 }
 
+function cardsRemaning(){
+    cardsR = deck.length;
+    document.getElementById("cardsR").innerHTML = "Cards remaining: "+ cardsR;
+    return;
+}
+
 function StartDeal(){
     getCard();
     Ai();
     start = false;
     AIturn = false;
     getCard();  
+}
+
+function Decks(){
+    console.log("deck creator " + number_of_decks);
+    while(number_of_decks <= 0 || isNaN(number_of_decks)){
+        number_of_decks = prompt("How many decks do you want to play with?");
+    }
+    return;
 }
 
 function winCounter(){
@@ -179,6 +200,8 @@ function getValue(value) {
 }
 
 function createDeck(){
+    
+for(i = 0; i < number_of_decks; i++){
     for(k = 1; k < 5; k++){
         switch (k) {
             case 1: cs="c"; break;
@@ -191,20 +214,26 @@ function createDeck(){
             deck.push(cs+cv);
         }
     }
+}
+    /* 
     var i = 0;
-    while (i < deck.length){
+    /* while (i < deck.length){
        console.log("card is: "+ deck[i]); 
         i=i+1;   
     }
     console.log(deck.length);
+    */
+    cardsRemaning();
+    console.log("deck created successfully!");
     return;
 }
             
 function getCard() {
-    draw = Math.floor((Math.random() * 52) + 1);
-    while(deck[draw] == undefined){
-        draw = Math.floor((Math.random() * 52) + 1);
+    draw = Math.floor((Math.random() * cardsR) + 1);
+  /*  while(deck[draw] == undefined){
+        draw = Math.floor((Math.random() * cardsR) + 1);
     }
+    */
     console.log("draw in getCard is: "+draw);
     value = deck[draw].slice(1);
     suit = deck[draw].slice(0,1);
@@ -226,14 +255,16 @@ function getCard() {
     
     if(AIturn) {
         cardGraph();
-        delete deck[draw];
+        deck.splice(draw, 1);
+        cardsRemaning();
         document.getElementById("AIt").innerHTML = text + valueN + " of " + suit;
         document.getElementById("AIcards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value); 
     }
     else {
         cardGraph();
-        delete deck[draw];
+        deck.splice(draw, 1);
+        cardsRemaning();
         document.getElementById("card").innerHTML = text + valueN + " of " + suit;
         document.getElementById("cards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value);  
