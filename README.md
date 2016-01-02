@@ -5,9 +5,8 @@ TODO (in no particular order):
 
 1. More Graphical UI.
 2. sounds/music.
-3. Option to play with more decks.
-4. Option to play with more AI controlled players.
-5. Logic for Ace to be 14 if possible.
+3. Option to play with more AI controlled players.
+4. Logic for Ace to be 14 if possible.
 
 How many wins can you get against the dealer in a row?
 
