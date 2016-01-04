@@ -150,10 +150,12 @@ function logic(score) {
         if(AIturn){
             AI.score = AI.score - 10;
             updateValue();
+            logic(AI.score);
         }
         else{
             player.score = player.score - 10;
             updateValue();
+            logic(player.score);
         }
     }
     
@@ -209,9 +211,10 @@ function updateValue(){
             return;
         }
         else {
-            document.getElementById("Score").innerHTML = "Your score: " + player.score; 
+            document.getElementById("Score").innerHTML = "Your score: " + player.score;
             return;
         }   
+        //return;
 }
             
 function getValue(value) {
@@ -223,7 +226,7 @@ function getValue(value) {
     else {
         player.score = player.score + value;
         updateValue();
-        logic(player.score);     
+        logic(player.score);
     }
 }
 
