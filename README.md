@@ -1,11 +1,10 @@
 # Blackjack
-Last update: 2.1.16
+Last update: 4.1.16
 
 TODO (in no particular order):
 
 1. More Graphical UI.
 2. Option to play with more AI controlled players.
-3. Logic for Ace to be 14 if possible.
 
 How many wins can you get against the dealer in a row?
 

@@ -12,6 +12,7 @@ var deck = [];
 var draw = 0;
 var number_of_decks = 0;
 var cardsR = 0;
+var ace = false;
 
 function setName(){
     player = {name,score};
@@ -44,6 +45,7 @@ function initiate(){
     player.score = 0;
     AIturn = false;
     start = true;
+    ace = false;
     document.getElementById("cardsR").innerHTML = "Cards remaining: "+ cardsR;
     document.getElementById("decksN").innerHTML = "Number of decks: "+ number_of_decks;
     document.getElementById("cardsP").innerHTML = "";
@@ -64,6 +66,7 @@ function initiate(){
 function cardsRemaning(){
     cardsR = deck.length;
     document.getElementById("cardsR").innerHTML = "Cards remaining: "+ cardsR;
+    console.log("cardsRemaining: "+value);
     return;
 }
 
@@ -80,6 +83,7 @@ function Decks(){
     while(number_of_decks <= 0 || isNaN(number_of_decks)){
         number_of_decks = prompt("How many decks do you want to play with?");
     }
+    console.log("deck creator after creating: " + number_of_decks);
     return;
 }
 
@@ -140,7 +144,20 @@ function Drawpopup() {
 
 
 function logic(score) {
-    if (score > 21) {
+    
+    if(score > 21 && ace){
+        ace = false;
+        if(AIturn){
+            AI.score = AI.score - 10;
+            updateValue();
+        }
+        else{
+            player.score = player.score - 10;
+            updateValue();
+        }
+    }
+    
+    else if (score > 21) {
         if (AIturn) {
             Winpopup();
         }
@@ -185,18 +202,54 @@ function logic(score) {
         }  
     }
 }
+
+function updateValue(){
+        if (AIturn) {
+            document.getElementById("AIs").innerHTML = "AI score: " + AI.score;
+            return;
+        }
+        else {
+            document.getElementById("Score").innerHTML = "Your score: " + player.score; 
+            return;
+        }   
+}
             
 function getValue(value) {
     if (AIturn) {
         AI.score = AI.score + value;
-        document.getElementById("AIs").innerHTML = "AI score: " + AI.score;
+        updateValue();
         logic(AI.score);
     }
     else {
         player.score = player.score + value;
-        document.getElementById("Score").innerHTML = "Your score: " + player.score;
+        updateValue();
         logic(player.score);     
     }
+}
+
+function aceValue(value){
+    
+    console.log("jsut got to aceValue with value "+value);
+    console.log("we are in acevalue");
+    if(AIturn && AI.score < 11){
+        console.log("we are in acevalue AI IF with value: "+value);
+        value = 11;
+        ace = true;
+    }
+    
+    else if (player.score < 11){
+        console.log("we are in acevalue PLAYER IF with value: "+value);
+        value = 11;
+        ace = true;
+    }
+    else{
+        console.log("needless else? "+value);
+        value = 1;
+        
+    }
+    console.log("Exiting acevalue with value: "+value);
+    manipulateDeck(value);
+    
 }
 
 function createDeck(){
@@ -227,31 +280,9 @@ for(i = 0; i < number_of_decks; i++){
     console.log("deck created successfully!");
     return;
 }
-            
-function getCard() {
-    draw = Math.floor((Math.random() * cardsR) + 1);
-  /*  while(deck[draw] == undefined){
-        draw = Math.floor((Math.random() * cardsR) + 1);
-    }
-    */
-    console.log("draw in getCard is: "+draw);
-    value = deck[draw].slice(1);
-    suit = deck[draw].slice(0,1);
-    
-    if(suit == "c"){suit="clubs";}
-    if(suit == "d"){suit="diamonds";}
-    if(suit == "h"){suit="hearts";}
-    if(suit == "s"){suit="spades";}
-    
-    value = parseInt(value);
-    
-    switch (value) {
-        case 1: valueN ="Ace"; break;
-        case 11: value= 10; valueN = "Jack"; break;
-        case 12: value= 10; valueN = "Queen"; break;
-        case 13: value= 10; valueN =" King"; break;
-        default: valueN = value; break;      
-    }
+
+function manipulateDeck(value){
+    console.log("jsut got to manipulatedeck with value "+value);
     
     if(AIturn) {
         cardGraph();
@@ -268,6 +299,34 @@ function getCard() {
         document.getElementById("card").innerHTML = text + valueN + " of " + suit;
         document.getElementById("cards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value);  
+    }
+    
+}
+            
+function getCard() {
+    draw = Math.floor((Math.random() * cardsR));
+  /*  while(deck[draw] == undefined){
+        draw = Math.floor((Math.random() * cardsR) + 1);
+    }
+    */
+    console.log("draw in getCard is: "+draw);
+    console.log("deck draw in getCard is: "+deck[draw]);
+    value = deck[draw].slice(1);
+    suit = deck[draw].slice(0,1);
+    
+    if(suit == "c"){suit="clubs";}
+    if(suit == "d"){suit="diamonds";}
+    if(suit == "h"){suit="hearts";}
+    if(suit == "s"){suit="spades";}
+    
+    value = parseInt(value);
+    
+    switch (value) {
+        case 1: valueN ="Ace"; aceValue(value); break;
+        case 11: value= 10; valueN = "Jack"; manipulateDeck(value); break;
+        case 12: value= 10; valueN = "Queen"; manipulateDeck(value); break;
+        case 13: value= 10; valueN =" King"; manipulateDeck(value); break;
+        default: valueN = value; manipulateDeck(value); break;      
     }
 }
 
