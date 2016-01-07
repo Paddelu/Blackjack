@@ -15,7 +15,7 @@ var cardsR = 0;
 var ace = false;
 
 function setName(){
-    player = {name,score};
+    player = {name,score,ace};
     console.log(player.name);
     while(!player.name || player.name.trim() == ""){
     player.name = prompt("Please enter your name");
@@ -41,11 +41,11 @@ function initiate(){
     deck.length = 0;
     createDeck();
     console.log("game starting");
-    AI = {name: "AI",score: 0};
+    AI = {name: "AI",score: 0, ace:false};
     player.score = 0;
     AIturn = false;
     start = true;
-    ace = false;
+    player.ace = false;
     document.getElementById("cardsR").innerHTML = "Cards remaining: "+ cardsR;
     document.getElementById("decksN").innerHTML = "Number of decks: "+ number_of_decks;
     document.getElementById("cardsP").innerHTML = "";
@@ -145,19 +145,18 @@ function Drawpopup() {
 
 function logic(score) {
     
-    if(score > 21 && ace){
-        ace = false;
-        if(AIturn){
-            AI.score = AI.score - 10;
-            updateValue();
-            logic(AI.score);
-        }
-        else{
+    if(score > 21 && AI.ace && AIturn){
+        AI.ace = false;
+        AI.score = AI.score - 10;
+        updateValue();
+        logic(AI.score);
+    }
+    else if (score > 21 && player.ace){
+            player.ace = false;
             player.score = player.score - 10;
             updateValue();
             logic(player.score);
         }
-    }
     
     else if (score > 21) {
         if (AIturn) {
@@ -232,18 +231,18 @@ function getValue(value) {
 
 function aceValue(value){
     
-    console.log("jsut got to aceValue with value "+value);
+    console.log("just got to aceValue with value "+value);
     console.log("we are in acevalue");
     if(AIturn && AI.score < 11){
         console.log("we are in acevalue AI IF with value: "+value);
         value = 11;
-        ace = true;
+        AI.ace = true;
     }
     
     else if (player.score < 11){
         console.log("we are in acevalue PLAYER IF with value: "+value);
         value = 11;
-        ace = true;
+        player.ace = true;
     }
     else{
         console.log("needless else? "+value);
@@ -271,14 +270,6 @@ for(i = 0; i < number_of_decks; i++){
         }
     }
 }
-    /* 
-    var i = 0;
-    /* while (i < deck.length){
-       console.log("card is: "+ deck[i]); 
-        i=i+1;   
-    }
-    console.log(deck.length);
-    */
     cardsRemaning();
     console.log("deck created successfully!");
     return;
@@ -303,15 +294,10 @@ function manipulateDeck(value){
         document.getElementById("cards").innerHTML +=" "+ valueN + " of " + suit+",";
         getValue(value);  
     }
-    
 }
             
 function getCard() {
     draw = Math.floor((Math.random() * cardsR));
-  /*  while(deck[draw] == undefined){
-        draw = Math.floor((Math.random() * cardsR) + 1);
-    }
-    */
     console.log("draw in getCard is: "+draw);
     console.log("deck draw in getCard is: "+deck[draw]);
     value = deck[draw].slice(1);
