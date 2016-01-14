@@ -37,7 +37,7 @@ p {
     .#{$c} {
         
     $k: $k + 1; //clubs,spades,hearts,diamonds
-    background-image:url(/media/cards.png);
+    background-image:url(media/cards.png);
     width:72px;
     height:97px;
     background-position:$k*-73px $j*97px;
